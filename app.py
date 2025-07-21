@@ -1,20 +1,17 @@
 import streamlit as st
 import smtplib
 import random
-import os
-from dotenv import load_dotenv
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
-# Load environment variables
-load_dotenv()
-EMAIL = os.getenv("EMAIL_USER")
-PASSWORD = os.getenv("EMAIL_PASS")
+# Load credentials securely from Streamlit secrets
+EMAIL = st.secrets["EMAIL_ADDRESS"]
+PASSWORD = st.secrets["EMAIL_PASSWORD"]
 
 # Page config
 st.set_page_config(page_title="Email OTP Verification", page_icon="🔐", layout="centered")
 
-# Vibrant background gradient (no boxes)
+# Background gradient styling
 st.markdown("""
 <style>
 .stApp {
@@ -32,22 +29,20 @@ label, input, button {
 </style>
 """, unsafe_allow_html=True)
 
-# App title
+# Title
 st.title("🔐 Email OTP Verification")
 
-# Initialize OTP
+# Initialize OTP state
 if "otp" not in st.session_state:
     st.session_state.otp = None
 
-# Email Form
+# Email Input Form
 with st.form("otp_form"):
     user_email = st.text_input("Enter your email address:")
     send_clicked = st.form_submit_button("Send OTP")
 
     if send_clicked:
-        if EMAIL is None or PASSWORD is None:
-            st.error("❌ Email or password missing in .env file.")
-        elif not user_email.strip():
+        if not user_email.strip():
             st.warning("⚠️ Please enter a valid email address.")
         else:
             st.session_state.otp = random.randint(1111, 9999)
@@ -67,7 +62,7 @@ with st.form("otp_form"):
                 server.quit()
                 st.success(f"✅ OTP sent successfully to {user_email}")
             except Exception as e:
-                st.error(f"❌ Authentication failed: {e}")
+                st.error(f"❌ Failed to send OTP: {e}")
 
 # OTP Verification
 if st.session_state.otp:
