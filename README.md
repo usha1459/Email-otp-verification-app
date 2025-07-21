@@ -12,7 +12,7 @@ A simple and secure Streamlit application for sending and verifying OTPs (One-Ti
 
 ## 🖥️ Demo
 
-Live App: [Click here to try](https://your-streamlit-cloud-link-here)
+Live App: [Click here to try]([https://your-streamlit-cloud-link-here](https://email-otp-verification-app-fjwasepmspwbanprzjhagz.streamlit.app/))
 
 ## 📂 Project Structure
 
