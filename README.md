@@ -38,7 +38,6 @@ cd email-otp-verification-app
 
 ```bash
 env
-Copy code
 EMAIL_USER=your_email@gmail.com
 EMAIL_PASS=your_app_password
 ```
@@ -46,16 +45,12 @@ EMAIL_PASS=your_app_password
 ### 3. Install dependencies
 
 ```bash
-bash
-Copy code
 pip install -r requirements.txt
 ```
 
 ### 4. Run the app locally
 
 ```bash
-bash
-Copy code
 streamlit run app.py
 ☁️ Deploy to Streamlit Cloud
 Push code to GitHub
