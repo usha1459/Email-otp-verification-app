@@ -12,7 +12,7 @@ A simple and secure Streamlit application for sending and verifying OTPs (One-Ti
 
 ## 🖥️ Demo
 
-**Live App:** [Click here to try](https://usha1459-email-otp-verification-app-main-app-h7xpwf.streamlit.app)
+**Live App:** [Click here to try]([https://usha1459-email-otp-verification-app-main-app-h7xpwf.streamlit.app](https://email-otp-verification-app-fjwasepmspwbanprzjhagz.streamlit.app/))
 
 email-otp-verification-app/
 ├── app.py              # Main Streamlit app
