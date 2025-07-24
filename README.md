@@ -62,10 +62,11 @@ Click "New App", connect your repo
 
 Set the following secrets under Settings > Secrets:
 
-toml
-Copy code
+``` bash
 EMAIL_USER="your_email@gmail.com"
 EMAIL_PASS="your_app_password"
+```
+
 🛡️ Security Note
 Do NOT hardcode credentials in the script.
 
